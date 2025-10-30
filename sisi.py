@@ -4,7 +4,6 @@ from PIL import Image
 from openai import OpenAI
 if "messages" not in st.session_state:
     st.session_state.messages = []
-image = Image.open(r"d:\Desktop\Sissi\o.jpg")
 st.title(":streamlit: :rainbow[sissi] :streamlit:")
 st.header("欢迎来到甄契智能AI",divider = "rainbow")
 st.text_area("安全提示","请文明用语\n""不要违反法律")
@@ -16,7 +15,7 @@ st.sidebar.link_button("导航","https://www.baidu.com/")
 bl = st.sidebar.radio("你觉得对你有帮助吗？",["有用","有点用","无用"],captions = ["值得鼓励","继续努力","需要提升"])
 st.sidebar.write("你的选择是",bl)
 st.snow()
-st.image(image,"sissi")
+st.image("https://www.helloimg.com/i/2025/10/30/69031c2c2ebf9.jpg","sissi")
 if st.sidebar.button('清除历史记录'):
     st.session_state.messages = []
     st.rerun()
@@ -41,3 +40,4 @@ if tiwenkuang:
     )
     st.markdown(response.choices[0].message.content)
     st.session_state.messages.append({"role":"assistant","content":response.choices[0].message.content})
+
